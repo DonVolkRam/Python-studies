@@ -20,11 +20,11 @@ def victory():
     day_data = dict(zip(days_d,days))
     month_data = dict(zip(month_d, month))
     #print(people_data)
-
-    result = random.sample(people, 5)
+    num_question = 5
+    result = random.sample(people, num_question)
     #print(result)
     score=0
-    for i in range(5):
+    for i in range(num_question):
         print("Когда отмечал день рождения ", result[i], "? :", end=" ")
         answer=input()
         sdata = list(answer.split("."))
@@ -43,7 +43,7 @@ def victory():
             sdata = list(str(people_data.get(result[i])).split("-"))
             print("Прваильный ответ:", day_data.get(int(sdata[2])-1), month_data.get(int(sdata[1])), sdata[0], "года", sep=" ")
         i+=1
-    print("Ваши очки", score, sep=" ")
+    print("Ваши очки", score, "из", num_question, sep=" ")
 
 res="да"
 print("Добро пожаловать на викорину! Вам предстоит отгадать дни рождения известных людей в России")
