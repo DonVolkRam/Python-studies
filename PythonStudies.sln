@@ -7,6 +7,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonHomeWork1", "PythonHo
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonHomeWork2", "PythonHomeWork2\PythonHomeWork2.pyproj", "{DEC268D3-DD9E-4D8C-9DC7-FF356F72C2B6}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonHomeWork3", "PythonHomeWork3\PythonHomeWork3.pyproj", "{1762DD5E-0656-4A34-B182-647E79B1A7C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,8 @@ Global
 		{2C9ACD31-2AF5-4986-99A9-CE798DCA5472}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC268D3-DD9E-4D8C-9DC7-FF356F72C2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DEC268D3-DD9E-4D8C-9DC7-FF356F72C2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1762DD5E-0656-4A34-B182-647E79B1A7C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1762DD5E-0656-4A34-B182-647E79B1A7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
