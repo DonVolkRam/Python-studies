@@ -1,6 +1,8 @@
 import requests
 import json
 from flask import Flask
+import os
+import sys
 
 
 def get_valutes_list():
@@ -37,6 +39,9 @@ def index():
     html = create_html(valutes)
     return html
 
+
+def about():
+    print('My OS is', sys.platform, '(', os.name, ')')
 
 if __name__ == "__main__":
     app.run()
