@@ -34,47 +34,48 @@
 Для реализации основного меню можно использовать пример ниже или написать свой
 """
 
-money = 0
-history_m = []
-history_w = []
-while True:
-    print('1. пополнение счета')
-    print('2. покупка')
-    print('3. история покупок')
-    print('4. выход')
+def money_game():
+    money = 0
+    history_m = []
+    history_w = []
+    while True:
+        print('1. пополнение счета')
+        print('2. покупка')
+        print('3. история покупок')
+        print('4. выход')
 
-    choice = input('Выберите пункт меню: ')
-    if choice == '1':
-        while (True):
-         try:
-             money += int(input("Внесите денежные средства: "))
-             print(f"Доступные средства {money}")
-             break
-         except:
-             print("Ошибка ввода")
-    elif choice == '2':
-        while (True):
-         try:
-             cost = int(input("Введите сумму покупки: "))
-             name=''
-             if cost>money:
-                print("Недостаточно средств")
-                break
-             else:
-                name = input("Введите название покупки: ")
-                history_m.append(cost)
-                history_w.append(name)
-                print("Покупка одобрена")
-                money-=cost
-                print(f"Доступные средства {money}")
-                break
-         except:
-             print("Ошибка ввода")
-    elif choice == '3':
-        print("История покупок")
-        for i in range(len(history_m)):
-            print(f"{history_w[i]} --> {history_m[i]}")
-    elif choice == '4':
-        break
-    else:
-        print('Неверный пункт меню')
+        choice = input('Выберите пункт меню: ')
+        if choice == '1':
+            while (True):
+             try:
+                 money += int(input("Внесите денежные средства: "))
+                 print(f"Доступные средства {money}")
+                 break
+             except:
+                 print("Ошибка ввода")
+        elif choice == '2':
+            while (True):
+             try:
+                 cost = int(input("Введите сумму покупки: "))
+                 name=''
+                 if cost>money:
+                    print("Недостаточно средств")
+                    break
+                 else:
+                    name = input("Введите название покупки: ")
+                    history_m.append(cost)
+                    history_w.append(name)
+                    print("Покупка одобрена")
+                    money-=cost
+                    print(f"Доступные средства {money}")
+                    break
+             except:
+                 print("Ошибка ввода")
+        elif choice == '3':
+            print("История покупок")
+            for i in range(len(history_m)):
+                print(f"{history_w[i]} --> {history_m[i]}")
+        elif choice == '4':
+            break
+        else:
+            print('Неверный пункт меню')
