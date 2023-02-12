@@ -2,16 +2,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>2c9acd31-2af5-4986-99a9-ce798dca5472</ProjectGuid>
-    <ProjectHome>
-    </ProjectHome>
-    <StartupFile>PythonHomeWork1.py</StartupFile>
+    <ProjectGuid>6927b163-b529-4bb0-a585-98b57de54dc0</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>test_filemanager.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>PythonHomeWork1</Name>
-    <RootNamespace>PythonApplication1</RootNamespace>
+    <Name>PythonHomeWork6</Name>
+    <RootNamespace>PythonHomeWork6</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,10 +22,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="module1.py">
+    <Compile Include="PythonHomeWork6.py" />
+    <Compile Include="test_filemanager.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PythonHomeWork1.py" />
+    <Compile Include="test_python.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
