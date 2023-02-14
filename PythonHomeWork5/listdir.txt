@@ -1,0 +1,2 @@
+files: copied.py, listdir.txt, money.data, new.py, orders.data, PythonHomeWork5.py, PythonHomeWork5.pyproj, 
+dirs: new, __pycache__, 
