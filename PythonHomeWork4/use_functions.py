@@ -34,11 +34,34 @@
 Для реализации основного меню можно использовать пример ниже или написать свой
 """
 
-def money_game():
+import os
+import pickle
+
+FILE_NAME_ORDERS = 'orders.data'
+FILE_NAME_MONEY = 'money.data'
+
+def get_orders():
+    orders = []
+    if os.path.exists(FILE_NAME_ORDERS):
+        with open(FILE_NAME_ORDERS, 'rb') as f:
+            orders = pickle.load(f)
+    return orders
+
+
+def get_money():
     money = 0
-    history_m = []
-    history_w = []
+    if os.path.exists(FILE_NAME_MONEY):
+        with open(FILE_NAME_MONEY, 'rb') as f:
+            money = pickle.load(f)
+    return money
+
+def money_game():
+    orders = get_orders()
+    money = get_money();
+    #history_m = []
+    #history_w = []
     while True:
+        print(f"Доступные средства {money}")
         print('1. пополнение счета')
         print('2. покупка')
         print('3. история покупок')
@@ -63,8 +86,10 @@ def money_game():
                     break
                  else:
                     name = input("Введите название покупки: ")
-                    history_m.append(cost)
-                    history_w.append(name)
+                    #history_m.append(cost)
+                    #history_w.append(name)
+                    order = (name, cost)
+                    orders.append(order)
                     print("Покупка одобрена")
                     money-=cost
                     print(f"Доступные средства {money}")
@@ -73,9 +98,17 @@ def money_game():
                  print("Ошибка ввода")
         elif choice == '3':
             print("История покупок")
-            for i in range(len(history_m)):
-                print(f"{history_w[i]} --> {history_m[i]}")
+            #for i in range(len(history_m)):
+            #    print(f"{history_w[i]} --> {history_m[i]}")
+            for order in orders:
+                print(order)
         elif choice == '4':
+            with open(FILE_NAME_ORDERS, 'wb') as f:
+                pickle.dump(orders, f)
+            with open(FILE_NAME_MONEY, 'wb') as f:
+                pickle.dump(money, f)
             break
         else:
             print('Неверный пункт меню')
+
+#money_game()

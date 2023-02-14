@@ -1,11 +1,32 @@
 import os
 import sys
 import shutil
+import pickle
+
+FILE_NAME = 'listdir.txt'
+
 sys.path.insert(1,os.path.join(sys.path[0], '..'))
 
 from PythonHomeWork3.victory import victory_game
 from PythonHomeWork4.use_functions import money_game
 from PythonHomeWork1.PythonHomeWork1 import about
+
+def get_dirs():
+    dirs = []
+    if os.path.exists(FILE_NAME):
+        with open(FILE_NAME, 'rb') as f:
+            dirs = pickle.load(f)
+    return dirs
+
+def save_dirsfiles(indirs, infiles):
+    with open(FILE_NAME, 'w') as f:
+        files = "files: "
+        for i in infiles:
+            files += i+", " 
+        files += "\ndirs: " 
+        for i in indirs:
+            files += i+", "
+        f.write(files)
 
 def create_dir():
     dir_name = input("Введите имя новой папки: ")
@@ -34,16 +55,22 @@ def watch_all():
     print(os.listdir())
 
 def watch_files():
+    files = []
     with os.scandir(os.getcwd()) as listOfEntries:  
         for entry in listOfEntries:        
             if entry.is_file():
                 print(entry.name)
+                files.append(entry.name)
+    return files
 
 def watch_dirs():
+     dirs = []
      with os.scandir(os.getcwd()) as listOfEntries:  
         for entry in listOfEntries:        
             if not entry.is_file():
                 print(entry.name)
+                dirs.append(entry.name)
+     return dirs
 
 def copy_file():
     name = input("Введите имя файла/папки: для копирования ")
@@ -79,7 +106,8 @@ while True:
         print('9. играть в викторину')
         print('10. мой банковский счет')
         print('11. смена рабочей директории')
-        print('12. выход')
+        print('12. сохранить содержимое рабочей директории в файл')
+        print('13. выход')
 
         choice = input('Выберите пункт меню: ')
         print("\n")
@@ -106,6 +134,8 @@ while True:
         elif choice == '11':
             change_dir()
         elif choice == '12':
+            save_dirsfiles(watch_dirs(),watch_files())
+        elif choice == '13':
             break
         else:
             print('Неверный пункт меню')

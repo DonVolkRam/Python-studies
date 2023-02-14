@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b5a84e60-826b-4549-9bca-68fb1b1a5513</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>borndayforewer.py</StartupFile>
+    <StartupFile>use_functions.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
