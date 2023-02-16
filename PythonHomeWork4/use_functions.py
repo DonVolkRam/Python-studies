@@ -61,7 +61,7 @@ def money_game():
     #history_m = []
     #history_w = []
     while True:
-        print(f"Доступные средства {money}")
+        
         print('1. пополнение счета')
         print('2. покупка')
         print('3. история покупок')
@@ -74,8 +74,12 @@ def money_game():
                  money += int(input("Внесите денежные средства: "))
                  print(f"Доступные средства {money}")
                  break
-             except:
+             except ValueError:
                  print("Ошибка ввода")
+             except:
+                 print("Неизвестная ошибка!")
+             finally:
+                 print("Спасибо что пользуетесь нашим банком")
         elif choice == '2':
             while (True):
              try:
@@ -94,8 +98,12 @@ def money_game():
                     money-=cost
                     print(f"Доступные средства {money}")
                     break
-             except:
+             except ValueError:
                  print("Ошибка ввода")
+             except:
+                 print("Неизвестная ошибка!")
+             finally:
+                 print("Спасибо что пользуетесь нашим банком")
         elif choice == '3':
             print("История покупок")
             #for i in range(len(history_m)):
